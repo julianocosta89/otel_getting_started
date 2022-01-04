@@ -6,7 +6,6 @@
   {applications,
    [kernel,
     stdlib,
-    grpcbox,
     opentelemetry_api,
     opentelemetry,
     opentelemetry_exporter
