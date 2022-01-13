@@ -1,0 +1,9 @@
+_build
+imgs/
+.gitignore
+collector-config.yaml
+docker-compose.yaml
+Dockerfile
+Dockerfile-collector
+LICENSE
+README.md

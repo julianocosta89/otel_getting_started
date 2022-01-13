@@ -8,10 +8,14 @@ docker-compose up
 
 Once the they are running, Jaeger UI should be accessible at: http://localhost:16686/
 
-2. Start the Erlang app:
-
+2. Build the Erlang image:
 ``` shell
-rebar3 shell
+docker build -t erlang-sample .
+```
+
+3. Start the Erlang container app:
+``` shell
+docker run --rm --network=host -it erlang-sample rebar3 shell
 ```
 
 You will get some startup messages in your console like the following:
@@ -43,6 +47,8 @@ otel_getting_started:hello().
 ```
 Which should return `true`.
 
-3. Vizualise the traces:
-In the Jaeger UI, for every call you will get a single trace with 2 spans like this one:
+- To exit press `Ctrl+G` and when prompted `User switch command` press `q + ENTER`.
+
+4. Vizualise the traces:
+In the [Jaeger UI](http://localhost:16686/), for every call you will get a single trace with 2 spans like this one:
 ![Jaeger_screenshot](./imgs/jaeger_screenshot.png)
